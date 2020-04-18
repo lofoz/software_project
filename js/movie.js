@@ -70,6 +70,19 @@ $('#b3').click(function() {
 	get_board(3);
 });
 
+$('#b4').click(function() {
+	$('#select .nav-link').removeClass('active');
+	$('.dropdown-item').removeClass('active');
+	$('.display_search').css("display", "none");
+	$('.display_2').css("display", "none");
+	$('.display_news').css("display", "none");
+	$('.display_1').css("display", "none");
+	$('.display_board').css("display", "block");
+	$('#b4').addClass('active');
+	$('#boardpage').addClass('active');
+	get_board('pre');
+});
+
 $('#searchpage').click(function() {
 	$('#select .nav-link').removeClass('active');
 	$('.dropdown-item').removeClass('active');
