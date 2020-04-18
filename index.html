@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+		 crossorigin="anonymous">
+
+		<link rel="stylesheet" type="text/css" href="./css/styles.css" />
+
+		<title>宅宅</title>
+	</head>
+	<body>
+		<!-- 標頭 -->
+		<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #00cc99;">
+			<div class="container">
+				<a class="navbar-brand" href="#" style="font-size: 24px;">
+					<img class="mr-2" src="./img/ncku-logo-b.png" height="36" class="d-inline-block align-top" alt="">
+					宅宅
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+				 aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+					<ul class="navbar-nav nav nav-pills">
+						<li class="nav-item info">
+							<a class="nav-link bg-transparent" data-toggle="pill" href="#" style="font-size: 18px;">簡介 <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item map_page">
+							<a class="nav-link bg-transparent active" data-toggle="pill" href="#map_page" style="font-size: 18px;">地圖</a>
+						</li>
+						<li class="nav-item data_analyze">
+							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='data_analyze.html';"
+							 href="#data_analyze" style="font-size: 18px;">數據分析</a>
+						</li>
+						<li class="nav-item sport_page">
+							<a class="nav-link bg-transparent" data-toggle="pill" href="#" style="font-size: 18px;">運動路徑</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+
+		<div class="container mt-4">
+			<!-- 選單列 -->
+			<ul class="nav nav-pills mb-3" id="select">
+				<li class="nav-item">
+					<a class="nav-link active" id="firstpage" href="#">首頁</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+					 aria-expanded="false" id="seasonpage">本季新作</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" id="1" href="#">週一</a>
+						<a class="dropdown-item" id="2" href="#">週二</a>
+						<a class="dropdown-item" id="3" href="#">週三</a>
+						<a class="dropdown-item" id="4" href="#">週四</a>
+						<a class="dropdown-item" id="5" href="#">週五</a>
+						<a class="dropdown-item" id="6" href="#">週六</a>
+						<a class="dropdown-item" id="7" href="#">週日</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+					 aria-expanded="false" id="boardpage">排行榜</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" id="b1" href="#">人氣排行</a>
+						<a class="dropdown-item" id="b2" href="#">評分排行</a>
+						<a class="dropdown-item" id="b3" href="#">期待排行</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="searchpage" href="#">搜尋</a>
+				</li>
+			</ul>
+
+			<!-- 顯示動畫新聞 -->
+
+			<div class="display_news card-columns"></div>
+
+			<!-- 顯示本季新作 -->
+			<div class="display_1 card-columns"></div>
+
+			<div class="display_search row">
+				<div class="form-inline md-form mr-auto mb-4 ml-3">
+					<input class="form-control mr-sm-2 col-md-6 col-sm-5 col-9" id="search" type="text" placeholder="Search Name"
+					 aria-label="Search">
+					<button class="btn btn-primary btn-sm col-md-2 col-sm-2 col-3" type="submit">Search</button>
+				</div>
+			</div>
+			
+			<!-- loading 圖示 -->
+			<div class="d-flex justify-content-center mt-5">
+				<div class="spinner-border text-success" style="width: 5rem; height: 5rem;" role="status" id="loading">
+					<span class="sr-only">Loading...</span>
+				</div>
+			</div>
+
+			<!-- 顯示排行榜 -->
+			<ul class="display_board list-unstyled border border-success rounded bg-light text-dark"></ul>
+
+			<!-- 顯示搜尋結果 -->
+			<div class="display_2 card-columns"></div>
+		</div>
+
+		</div>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		 crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		 crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		 crossorigin="anonymous"></script>
+		<script src="./js/animate.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
