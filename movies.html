@@ -8,7 +8,6 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 		 crossorigin="anonymous">
-		<link rel="manifest" href="manifest.json">
 		<link rel="stylesheet" type="text/css" href="./css/styles.css" />
 
 		<title>宅宅</title>
@@ -28,15 +27,15 @@
 				<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 					<ul class="navbar-nav nav nav-pills">
 						<li class="nav-item info">
-							<a class="nav-link bg-transparent active" data-toggle="pill" onclick="javascript:location.href='index.html';"
-							 href="#" style="font-size: 18px;">動畫<span class="sr-only">(current)</span></a>
+							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='index.html';" href="#"
+							 style="font-size: 18px;">動畫<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item map_page">
 							<a class="nav-link bg-transparent" data-toggle="pill" href="#" style="font-size: 18px;">日劇</a>
 						</li>
 						<li class="nav-item data_analyze">
-							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='movies.html';" href="#"
-							 style="font-size: 18px;">電影</a>
+							<a class="nav-link bg-transparent active" data-toggle="pill" onclick="javascript:location.href='movies.html';"
+							 href="#" style="font-size: 18px;">電影</a>
 						</li>
 						<li class="nav-item sport_page">
 							<a class="nav-link bg-transparent" data-toggle="pill" href="#" style="font-size: 18px;">PTT</a>
@@ -53,18 +52,8 @@
 				<li class="nav-item">
 					<a class="nav-link active" id="firstpage" href="#">首頁</a>
 				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-					 aria-expanded="false" id="seasonpage">本季新作</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" id="1" href="#">週一</a>
-						<a class="dropdown-item" id="2" href="#">週二</a>
-						<a class="dropdown-item" id="3" href="#">週三</a>
-						<a class="dropdown-item" id="4" href="#">週四</a>
-						<a class="dropdown-item" id="5" href="#">週五</a>
-						<a class="dropdown-item" id="6" href="#">週六</a>
-						<a class="dropdown-item" id="7" href="#">週日</a>
-					</div>
+				<li class="nav-item">
+					<a class="nav-link" id="seasonpage" href="#">最新電影</a>
 				</li>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
@@ -118,13 +107,7 @@
 		 crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 		 crossorigin="anonymous"></script>
-		<script>
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('sw.js')
-					.then(reg => console.log('完成 SW 設定!', reg))
-					.catch(err => console.log('Error!', err));
-			}
-		</script>
-		<script src="./js/animate.js" type="text/javascript" charset="utf-8"></script>
+
+		<script src="./js/movie.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
