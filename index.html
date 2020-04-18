@@ -93,7 +93,7 @@
 					<button class="btn btn-primary btn-sm col-md-2 col-sm-2 col-3" type="submit">Search</button>
 				</div>
 			</div>
-			
+
 			<!-- loading 圖示 -->
 			<div class="d-flex justify-content-center mt-5">
 				<div class="spinner-border text-success" style="width: 5rem; height: 5rem;" role="status" id="loading">
@@ -117,6 +117,13 @@
 		 crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 		 crossorigin="anonymous"></script>
+		<script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('./js/sw.js')
+					.then(reg => console.log('完成 SW 設定!', reg))
+					.catch(err => console.log('Error!', err));
+			}
+		</script>
 		<script src="./js/animate.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>
