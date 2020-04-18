@@ -1,6 +1,6 @@
 {
-	"name": "PWA To-Do List with Vanilla JS",
-	"short_name": "To-Do List",
+	"name": "宅宅嗨翻天",
+	"short_name": "宅宅",
 	"start_url": ".",
 	"icons": [{
 		"src": "192x192.png",
@@ -19,7 +19,7 @@
 		"sizes": "512x512",
 		"type": "image/png"
 	}],
-	"background_color": "#707477",
+	"background_color": "#00cc99",
 	"theme_color": "#f2f2f2",
 	"display": "standalone",
 	"orientation": "portrait"
