@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+		 crossorigin="anonymous">
+		<style>
+			body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', 'Microsoft JhengHei', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+        
+        #carouselExampleControls {
+            margin-bottom: 20px;
+        }
+        
+        .card {
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 575px) {
+            .link {
+                width: 100%;
+            }
+            html {
+                font-size: 0.6rem;
+            }
+            .rate {
+                position: absolute;
+                right: 0;
+            }
+        }
+        
+        @media (min-width: 576px) {
+            .link {
+                width: 100%;
+            }
+            html {
+                font-size: 1.0rem;
+            }
+            .rate {
+                position: absolute;
+                right: 0;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .link {
+                width: 100%;
+            }
+            html {
+                font-size: 1.2rem;
+            }
+            .rate {
+                position: absolute;
+                right: 0;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .link {
+                width: 100%;
+            }
+            html {
+                font-size: 1.4rem;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .link {
+                width: 50%;
+            }
+            html {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+		<title>Hello, world!</title>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #00cc99;">
+			<div class="container">
+				<a class="navbar-brand" href="#" style="font-size: 24px;">
+					<img class="mr-2" src="./192x192.png" height="36" class="d-inline-block align-top" alt="">
+					宅宅
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+				 aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+					<ul class="navbar-nav nav nav-pills">
+						<li class="nav-item info">
+							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='index.html';"
+							 href="#" style="font-size: 18px;">動畫<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item map_page">
+							<a class="nav-link bg-transparent active" data-toggle="pill" onclick="javascript:location.href='japandrama.html';" href="#"
+							 style="font-size: 18px;">日劇</a>
+						</li>
+						<li class="nav-item data_analyze">
+							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='movies.html';" href="#"
+							 style="font-size: 18px;">電影</a>
+						</li>
+						<li class="nav-item sport_page">
+							<a class="nav-link bg-transparent" data-toggle="pill" href="#" style="font-size: 18px;">PTT</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container mt-2">
+			<div class="row justify-content-end">
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2 inputtext" type="search" placeholder="輸入劇名、演員搜尋" aria-label="Search" name="inputtext">
+					<button class="btn btn-outline-success my-2 my-sm-0 search" type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+
+
+
+
+
+
+		<div class="container mt-2">
+			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+				</div>
+				<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+
+
+
+
+
+
+
+
+
+
+			<div class="row cardset">
+
+
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row  justify-content-center">
+				<nav aria-label="Page navigation example">
+					<ul class="pagination">
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+		 crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+		 crossorigin="anonymous"></script>
+		<script>
+			var video_num;
+			var page_num = 0;
+			var page_size = [];
+			var page_content = [];
+			var page_list = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+			var pagination_li;
+			var info;
+			var ser_page_num = 0;
+			var ser_page_size = [];
+			var ser_page_content = [];
+			var state = 0; //home
+			var pre_text;
+			$(document).ready(function() {
+				$.ajax({
+					url: "https://cors-anywhere.herokuapp.com/https://japan-drama.herokuapp.com/",
+					type: "GET",
+					dataType: 'json',
+					success: function(data) {
+						video_num = data.length;
+						cal_page(video_num);
+						init_card(data);
+						init_pagination(page_num);
+						init_carousel(page_num);
+						$('.cardset').html(page_content[0]);
+						info = data;
+					},
+				});
+
+
+
+				function cal_page(num) {
+					var len = num;
+					while (len > 0) {
+						len = len - 20;
+						page_num = page_num + 1;
+						page_size.push(20);
+					}
+					if (len < 0) {
+						page_size.pop();
+						page_size.push(len + 20);
+					}
+					return;
+				}
+
+				function ser_cal_page(num) {
+					var len = num;
+					while (len > 0) {
+						len = len - 20;
+						ser_page_num = ser_page_num + 1;
+						ser_page_size.push(20);
+					}
+					if (len < 0) {
+						ser_page_size.pop();
+						ser_page_size.push(len + 20);
+					}
+					return;
+				}
+
+
+				function init_card(data) {
+					for (var index = 0; index < page_num; index++) {
+						var content = '';
+						var rate;
+						var actor = [];
+						for (var i = 0; i < 20; i++) {
+							if ((i + 20 * index) == video_num)
+								break;
+							actor = [];
+							if (typeof(data[i + 20 * index].aggregateRating) != "undefined") {
+								rate = (data[i + 20 * index].aggregateRating.ratingValue);
+							} else {
+								rate = 'None';
+							}
+
+
+							if (data[i + 20 * index].actor.length >= 3) {
+								for (var j = 0; j < 3; j++)
+									actor.push(data[i + 20 * index].actor[j].name);
+							} else {
+								for (var j = 0; j < data[i + 20 * index].actor.length; j++)
+									actor.push(data[i + 20 * index].actor[j].name);
+								var rest = 3 - data[i + 20 * index].actor.length;
+								for (var j = 0; j < rest; j++)
+									actor.push('');
+							}
+
+							content += '<div class="col-6 col-sm-6 col-md-6 col-lg-6" style="display:flex">' +
+								'<div class="card border-dark mb-3" >' +
+								'<img src=' + data[i + 20 * index].image[0] + ' class="card-img-top img-fluid" alt="...">' +
+								' <h5><span class="badge badge-pill badge-primary rate" style="right:0;position:absolute;margin-top:-0.5rem;">' +
+								rate + '</span></h5>' +
+								'<div class="card-body">' +
+								'<h5 class="card-title">' + data[i + 20 * index].name + '</h5>' +
+								'<div class="text-part" style="margin-bottom: 0;">' + data[i + 20 * index].description.substring(0, 50) +
+								'...' +
+								'</div>' +
+								'<div class="actor">' + actor[0] + ' ' + actor[1] + ' ' + actor[2] +
+								'</div>' +
+								'</div>' +
+								'<a class="btn btn-primary link align-self-end" href="' + data[i + 20 * index].url +
+								'" role="button">前往看片</a>' +
+								'</div>' +
+								'</div>';
+						}
+						page_content.push(content);
+					}
+				}
+
+
+
+
+				function init_pagination(num) {
+					content = '';
+					for (var i = 0; i < num; i++) {
+						content += '<li class="page-item ' + page_list[i] + ' ">' + '<a class="page-link " >' + (i + 1) +
+							'</a>' +
+							'</li>';
+					}
+					pagination_li = content;
+					$('.pagination').html(content);
+					$('.one').click(function() {
+						$('.cardset').html(page_content[0]);
+						console.log('ome');
+						$('html,body').scrollTop(0);
+					})
+
+					$('.two').click(function() {
+						$('.cardset').html(page_content[1]);
+						$('html,body').scrollTop(0);
+					})
+
+					$('.three').click(function() {
+						$('.cardset').html(page_content[2]);
+						$('html,body').scrollTop(0);
+					})
+
+					$('.four').click(function() {
+						$('.cardset').html(page_content[3]);
+						$('html,body').scrollTop(0);
+					})
+
+					$('.five').click(function() {
+						$('.cardset').html(page_content[4]);
+						$('html,body').scrollTop(0);
+					})
+
+					$('.six').click(function() {
+						$('.cardset').html(page_content[5]);
+						$('html,body').scrollTop(0);
+					})
+
+					$('.seven').click(function() {
+						$('.cardset').html(page_content[6]);
+						$('html,body').scrollTop(0);
+					})
+				}
+
+
+
+				function init_carousel(num) {
+					$.ajax({
+						url: "https://cors-anywhere.herokuapp.com/https://japan-drama.herokuapp.com/banner",
+						type: "GET",
+						dataType: 'json',
+						success: function(data) {
+							banner_num = data.length;
+							content = '';
+							for (var i = 0; i < banner_num; i++) {
+								if (i == 0) {
+									content += '<div class="carousel-item active">' + '<a href=' + data[i].url + '>' +
+										'<img src=' + data[i].img + '  class="d-block w-100" alt="..."></a>' +
+										'<div class="carousel-caption ">' + '<h5 class="font-weight-bold ">' + data[i].name + '</h5>' +
+										'</div>' + ' </div>';
+								} else {
+									content += '<div class="carousel-item ">' + '<a href=' + data[i].url + '>' +
+										'<img src=' + data[i].img + '  class="d-block w-100" alt="..."></a>' +
+										'<div class="carousel-caption ">' + '<h5 class="font-weight-bold ">' + data[i].name + '</h5>' +
+										'</div>' + ' </div>';
+								}
+							}
+							$('.carousel-inner').html(content);
+						},
+					});
+				}
+
+
+
+				function ser_card(result) {
+					for (var index = 0; index < ser_page_num; index++) {
+						var content = '';
+						var rate;
+						var actor = [];
+						for (var i = 0; i < 20; i++) {
+							if ((i + 20 * index) == ser_num)
+								break;
+							actor = [];
+							if (typeof(result[i + 20 * index].aggregateRating) != "undefined") {
+								rate = (result[i + 20 * index].aggregateRating.ratingValue);
+							} else {
+								rate = 'None';
+							}
+
+
+							if (result[i + 20 * index].actor.length >= 3) {
+								for (var j = 0; j < 3; j++)
+									actor.push(result[i + 20 * index].actor[j].name);
+							} else {
+								for (var j = 0; j < info[i + 20 * index].actor.length; j++)
+									actor.push(result[i + 20 * index].actor[j].name);
+								var rest = 3 - result[i + 20 * index].actor.length;
+								for (var j = 0; j < rest; j++)
+									actor.push('');
+							}
+
+							content += '<div class="col-6 col-sm-6 col-md-6 col-lg-6" style="display:flex">' +
+								'<div class="card border-dark mb-3" >' +
+								'<img src=' + result[i + 20 * index].image[0] + ' class="card-img-top img-fluid" alt="...">' +
+								' <h5><span class="badge badge-pill badge-primary rate" style="right:0;position:absolute;margin-top:-0.5rem;">' +
+								rate + '</span></h5>' +
+								'<div class="card-body">' +
+								'<h5 class="card-title">' + result[i + 20 * index].name + '</h5>' +
+								'<div class="text-part" style="margin-bottom: 0;">' + result[i + 20 * index].description.substring(0, 50) +
+								'...' +
+								'</div>' +
+								'<div class="actor">' + actor[0] + ' ' + actor[1] + ' ' + actor[2] +
+								'</div>' +
+								'</div>' +
+								'<a class="btn btn-primary link align-self-end" href="' + result[i + 20 * index].url +
+								'" role="button">前往看片</a>' +
+								'</div>' +
+								'</div>';
+						}
+						ser_page_content.push(content);
+						$('.cardset').html(ser_page_content[0]);
+					}
+				}
+
+				function ser_pagination(num) {
+					content = '';
+					for (var i = 0; i < ser_page_num; i++) {
+						content += '<li class="page-item ' + page_list[i] + ' ">' + '<a class="page-link " >' + (i + 1) +
+							'</a>' +
+							'</li>';
+					}
+					$('.pagination').html(content);
+					$('.one').click(function() {
+						$('.cardset').html(ser_page_content[0]);
+						console.log('ome');
+						$('html,body').scrollTop(0);
+					})
+
+					$('.two').click(function() {
+						$('.cardset').html(ser_page_content[1]);
+						$('html,body').scrollTop(0);
+					})
+
+					$('.three').click(function() {
+						$('.cardset').html(ser_page_content[2]);
+						$('html,body').scrollTop(0);
+					})
+
+					$('.four').click(function() {
+						$('.cardset').html(ser_page_content[3]);
+						$('html,body').scrollTop(0);
+					})
+
+					$('.five').click(function() {
+						$('.cardset').html(ser_page_content[4]);
+						$('html,body').scrollTop(0);
+					})
+
+					$('.six').click(function() {
+						$('.cardset').html(ser_page_content[5]);
+						$('html,body').scrollTop(0);
+					})
+
+					$('.seven').click(function() {
+						$('.cardset').html(ser_page_content[6]);
+						$('html,body').scrollTop(0);
+					})
+				}
+
+				function state_dec() {
+					if (state == 0) {
+
+						state = 1;
+						ser_num = 0;
+						ser_page_num = 0;
+						ser_page_size = [];
+						ser_page_content = [];
+						var value = $('.inputtext').val();
+						pre_text = value;
+						var result = find(value);
+						ser_num = result.length;
+						ser_cal_page(ser_num);
+						ser_card(result);
+						ser_pagination(ser_page_num);
+
+					} else {
+						var value = $('.inputtext').val();
+						if (value == pre_text) {
+							$('.cardset').html(ser_page_content[0]);
+						} else {
+							state = 0;
+							state_dec();
+						}
+					}
+				}
+
+				$('.search').click(function(e) {
+					e.preventDefault();
+					if ($('.inputtext').val() == '') {
+						state = 0;
+						$('.cardset').html(page_content[0]);
+						init_pagination(page_num);
+					} else {
+						state_dec();
+					}
+				})
+
+				function find(text) {
+					var res = [];
+					for (var i = 0; i < info.length; i++) {
+						var obj = info[i];
+						if (obj.name.includes(text)) {
+							res.push(obj);
+							// console.log(obj);
+							continue;
+						}
+						var actor_list = obj.actor;
+						// console.log(actor_list);
+						for (var j = 0; j < actor_list.length; j++) {
+							if (actor_list[j].name.includes(text)) {
+								res.push(obj);
+								// console.log(obj);
+								break;
+							}
+						}
+					}
+					return res;
+				}
+
+
+
+			});
+		</script>
+	</body>
+
+</html>

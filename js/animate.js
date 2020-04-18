@@ -25,6 +25,7 @@ $('#1').click(function() {
 	$('.display_2').css("display", "none");
 	$('.display_news').css("display", "none");
 	$('.display_board').css("display", "none");
+	$('.news_pagination').css("display", "none");
 	$('.display_1').css("display", "block");
 	$('#1').addClass('active');
 	$('#seasonpage').addClass('active');
@@ -38,6 +39,7 @@ $('#2').click(function() {
 	$('.display_2').css("display", "none");
 	$('.display_news').css("display", "none");
 	$('.display_board').css("display", "none");
+	$('.news_pagination').css("display", "none");
 	$('.display_1').css("display", "block");
 	$('#2').addClass('active');
 	$('#seasonpage').addClass('active');
@@ -51,6 +53,7 @@ $('#3').click(function() {
 	$('.display_2').css("display", "none");
 	$('.display_news').css("display", "none");
 	$('.display_board').css("display", "none");
+	$('.news_pagination').css("display", "none");
 	$('.display_1').css("display", "block");
 	$('#3').addClass('active');
 	$('#seasonpage').addClass('active');
@@ -64,6 +67,7 @@ $('#4').click(function() {
 	$('.display_2').css("display", "none");
 	$('.display_news').css("display", "none");
 	$('.display_board').css("display", "none");
+	$('.news_pagination').css("display", "none");
 	$('.display_1').css("display", "block");
 	$('#4').addClass('active');
 	$('#seasonpage').addClass('active');
@@ -77,6 +81,7 @@ $('#5').click(function() {
 	$('.display_2').css("display", "none");
 	$('.display_news').css("display", "none");
 	$('.display_board').css("display", "none");
+	$('.news_pagination').css("display", "none");
 	$('.display_1').css("display", "block");
 	$('#5').addClass('active');
 	$('#seasonpage').addClass('active');
@@ -90,6 +95,7 @@ $('#6').click(function() {
 	$('.display_2').css("display", "none");
 	$('.display_news').css("display", "none");
 	$('.display_board').css("display", "none");
+	$('.news_pagination').css("display", "none");
 	$('.display_1').css("display", "block");
 	$('#6').addClass('active');
 	$('#seasonpage').addClass('active');
@@ -103,6 +109,7 @@ $('#7').click(function() {
 	$('.display_2').css("display", "none");
 	$('.display_news').css("display", "none");
 	$('.display_board').css("display", "none");
+	$('.news_pagination').css("display", "none");
 	$('.display_1').css("display", "block");
 	$('#7').addClass('active');
 	$('#seasonpage').addClass('active');
@@ -116,6 +123,7 @@ $('#b1').click(function() {
 	$('.display_2').css("display", "none");
 	$('.display_news').css("display", "none");
 	$('.display_1').css("display", "none");
+	$('.news_pagination').css("display", "none");
 	$('.display_board').css("display", "block");
 	$('#b1').addClass('active');
 	$('#boardpage').addClass('active');
@@ -129,6 +137,7 @@ $('#b2').click(function() {
 	$('.display_2').css("display", "none");
 	$('.display_news').css("display", "none");
 	$('.display_1').css("display", "none");
+	$('.news_pagination').css("display", "none");
 	$('.display_board').css("display", "block");
 	$('#b2').addClass('active');
 	$('#boardpage').addClass('active');
@@ -142,6 +151,7 @@ $('#b3').click(function() {
 	$('.display_2').css("display", "none");
 	$('.display_news').css("display", "none");
 	$('.display_1').css("display", "none");
+	$('.news_pagination').css("display", "none");
 	$('.display_board').css("display", "block");
 	$('#b3').addClass('active');
 	$('#boardpage').addClass('active');
@@ -155,6 +165,7 @@ $('#searchpage').click(function() {
 	$('.display_1').css("display", "none");
 	$('.display_news').css("display", "none");
 	$('.display_board').css("display", "none");
+	$('.news_pagination').css("display", "none");
 	$('.display_2').css("display", "block");
 	$('.display_search').css("display", "block");
 });
@@ -231,20 +242,65 @@ function search(str) {
 	}
 }
 
+
+var page_card = [];
+
 function news(analyze_data) {
+	var page = Math.ceil(analyze_data['title'].length / 10);
 	var cards = '';
-	for (let i = 0; i < analyze_data['title'].length; i++) {
+	page_card = [];
+	for (let i = 0; i < page - 1; i++) {
+		cards = '';
+		for (let j = 0; j < 10; j++) {
+			cards += '<div class="card bg-dark text-white border-secondary">' + '<img src="\
+			' + analyze_data['img_link'][i *
+					10 + j
+				] +
+				'" class="card-img-top" alt="...">\
+			' + '<div class="card-body">' + '<h5 class="card-title">' + '<b>' +
+				analyze_data[
+					'title'][i * 10 + j] + '</b>' + '</h5>\
+			' + '<a href="' + analyze_data['link'][i * 10 + j] +
+				'" target="_blank" class="btn btn-primary">Link</a></div></div>';
+		}
+		page_card.push(cards);
+	}
+	cards = '';
+	for (let i = 0; i < analyze_data['title'].length % 10; i++) {
 		cards += '<div class="card bg-dark text-white border-secondary">' + '<img src="\
-		' + analyze_data['img_link'][i] +
+		' + analyze_data['img_link'][page * 10 +
+				i - 10
+			] +
 			'" class="card-img-top" alt="...">\
 		' + '<div class="card-body">' + '<h5 class="card-title">' + '<b>' +
 			analyze_data[
-				'title'][i] + '</b>' + '</h5>\
-		' + '<a href="' + analyze_data['link'][i] +
+				'title'][page * 10 + i - 10] + '</b>' + '</h5>\
+		' + '<a href="' + analyze_data['link'][page * 10 + i - 10] +
 			'" target="_blank" class="btn btn-primary">Link</a></div></div>';
 	}
+	page_card.push(cards);
 	$('#loading').css("display", "none");
-	$('.display_news').html(cards);
+	add_new(0)
+	// $('.display_news').html(cards);
+}
+
+function add_new(now_page) {
+	$('.display_news').html(page_card[now_page]);
+	var pagination = '';
+	pagination += '<nav aria-label="Page navigation">' + '<ul class="pagination justify-content-center">';
+	for (let i = 0; i < page_card.length; i++) {
+		if (i == now_page) {
+			pagination += '<li class="page-item active"><a class="page-link" onclick="add_new(' + i + ')" id="page_' + (i + 1) +
+				'" href="#">' + (i + 1) +
+				'</a></li>';
+		} else {
+			pagination += '<li class="page-item"><a class="page-link" onclick="add_new(' + i + ')" id="page_' + (i + 1) +
+				'" href="#">' + (i + 1) +
+				'</a></li>';
+		}
+	}
+	$('.news_pagination').html(pagination);
+	$('.news_pagination').css("display", "block");
 }
 
 function board(analyze_data) {
