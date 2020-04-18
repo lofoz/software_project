@@ -1,7 +1,7 @@
 {
 	"name": "PWA To-Do List with Vanilla JS",
 	"short_name": "To-Do List",
-	"start_url": "/",
+	"start_url": ".",
 	"icons": [{
 		"src": "192x192.png",
 		"sizes": "192x192",
