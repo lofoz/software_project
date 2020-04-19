@@ -1,0 +1,76 @@
+body {
+	font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', 'Microsoft JhengHei', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+#carouselExampleControls {
+	margin-bottom: 20px;
+}
+
+.card {
+	margin-bottom: 20px;
+}
+
+@media (max-width: 575px) {
+	.link {
+		width: 100%;
+	}
+
+	html {
+		font-size: 0.6rem;
+	}
+
+	.rate {
+		position: absolute;
+		right: 0;
+	}
+}
+
+@media (min-width: 576px) {
+	.link {
+		width: 100%;
+	}
+
+	html {
+		font-size: 1.0rem;
+	}
+
+	.rate {
+		position: absolute;
+		right: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.link {
+		width: 100%;
+	}
+
+	html {
+		font-size: 1.2rem;
+	}
+
+	.rate {
+		position: absolute;
+		right: 0;
+	}
+}
+
+@media (min-width: 992px) {
+	.link {
+		width: 100%;
+	}
+
+	html {
+		font-size: 1.4rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.link {
+		width: 50%;
+	}
+
+	html {
+		font-size: 1.6rem;
+	}
+}
