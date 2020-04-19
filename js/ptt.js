@@ -16,12 +16,22 @@ $(document).ready(function() {
 // $('#btn').onclick = "search()";
 
 async function search() {
+	board = await document.getElementById('board').value;
+	kw = document.getElementById('kw').value;
+
+	if (board != "") {
+		var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~!@#￥……&*()——|{}【】‘;:”“'。,、?%]");
+		var m1 = board.match(pattern);
+		var m2 = kw.match(pattern);
+		if (m1 != null || m2 != null) {
+			alert("請勿輸入特殊符號!");
+			return;
+		}
+	}
 	console.log("start search");
 	$('#d1').css("display", "none");
 	$('#d2').css("display", "none");
 	$('#wc').css("display", "none");
-	board = await document.getElementById('board').value;
-	kw = document.getElementById('kw').value;
 
 	document.getElementById('result').innerHTML = "";
 	document.getElementById('hot').innerHTML = "";
@@ -31,8 +41,7 @@ async function search() {
 	$('#sp2').css("display", "block");
 	$('#d2').css("display", "block");
 	$('#sp3').css("display", "block");
-
-
+	
 	if (board == "") board = "default";
 	if (kw == "") kw = "default";
 	console.log("board: %s, kw: %s", board, kw);
