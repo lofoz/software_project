@@ -20,7 +20,7 @@ body {
 		width: 100%;
 	}
 
-	html {
+	html :not(#fuck) {
 		font-size: 0.6rem;
 	}
 
@@ -35,7 +35,7 @@ body {
 		width: 100%;
 	}
 
-	html {
+	html :not(#fuck) {
 		font-size: 1.0rem;
 	}
 
@@ -50,7 +50,7 @@ body {
 		width: 100%;
 	}
 
-	html {
+	html :not(#fuck) {
 		font-size: 1.2rem;
 	}
 
@@ -65,7 +65,7 @@ body {
 		width: 100%;
 	}
 
-	html {
+	html :not(#fuck) {
 		font-size: 1.4rem;
 	}
 }
@@ -75,7 +75,7 @@ body {
 		width: 50%;
 	}
 
-	html {
+	html :not(#fuck) {
 		font-size: 1.6rem;
 	}
 }
