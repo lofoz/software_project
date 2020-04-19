@@ -356,11 +356,11 @@ $(document).ready(function() {
             pre_text = value;
             var result = find(value);
             if (result.length == 0) {
+                $('.cardset').html('查無結果');
                 $('.pagination').html('');
-                alert('查無結果，將導回首頁');
                 setTimeout(function() {
                     location.reload();
-                }, 2000)
+                }, 1000)
             } else {
                 state = 1;
                 ser_num = result.length;
