@@ -356,8 +356,8 @@ $(document).ready(function() {
             pre_text = value;
             var result = find(value);
             if (result.length == 0) {
-                $('.cardset').html('查無結果');
                 $('.pagination').html('');
+                alert('查無結果，將導回首頁');
                 setTimeout(function() {
                     location.reload();
                 }, 2000)
