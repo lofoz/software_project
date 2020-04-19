@@ -92,6 +92,8 @@
                 <br>
                 <div id="out_videos">
                 </div>
+                <div id="hint">
+                </div>
             </div>
         </div>
     </div>
@@ -146,10 +148,7 @@
 
             $("#sendout").click(function () {
                 var actor = $("#actor").val();
-                actor.replace("<", "");
-                actor.replace(">", "");
-                actor.replace("/", "");
-                actor.replace(" ", "");
+                actor = actor.replace("<", "").replace(">", "").replace("/", "").replace(" ", "");;
                 if (actor == "") {
                     $("#input-error").html("<br>請輸入演員名稱")
                     return;
@@ -185,12 +184,17 @@
             });
         }
         );
+        
         function cleanElement() {
             // $("#actor-name").remove;
             $("#vn").html("");
             $("#result").html("");
             $("#pb").html("");
             $("#out_videos").html("");
+        }
+        function searchVideo(videoName)
+        {
+            window.open("https://google.com/search?q="+videoName);
         }
         function drawChart(element, jsonString) {
             var numOfVideos = 0;
@@ -200,7 +204,8 @@
             var typeDict = {};
             element.html("");
             for (var actor in jsonObject) {
-                element.append("<h2 id=\"actor-name\">" + actor + "</h2><br>");
+                // 演員全名
+                element.append("<h2 href=\"#\" id=\"actor-name\">" + actor + "</h2><br>");
                 element.append("<h4 id=\"statistic\">" + "出演類型統計" + "</h4><br>");
                 // iterating through video types
                 for (var dict in jsonObject[actor][0]) {
@@ -215,12 +220,14 @@
                 $("#out_videos").append("<div class=\"list-group\" id=\"group\">");
 
                 // iterating through video names
-                let liString = "<li class=\"list-group-item\">";
+                // let liString = "<li class=\"list-group-item\">";
+                let liString = "<a href=\"#\" class=\"list-group-item list-group-item-action\" id=\"";
 
                 for (var dict in jsonObject[actor][1]) {
-                    $("#group").append(liString + dict.toString() + "</li>");
+                    $("#group").append(liString + dict.toString() + "\"" 
+                    + "onclick=\"searchVideo(this.id)\">"+ dict.toString() + "</a>");
                 }
-                $("#out_videos").append("</ul>");
+                $("#out_videos").append("</div>");
             }
             var maxValue = 0;
             var maxTypes = [];
@@ -245,7 +252,7 @@
             }
             badge += "</div>";
             $("#pb").append(badge);
-            $("#pb").append("<hr>");
+            $("#pb").append("<br>");
             return numOfVideos;
         }
     </script>
