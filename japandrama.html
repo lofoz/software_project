@@ -1,99 +1,101 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- Required meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-		<!-- Bootstrap CSS -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-		 crossorigin="anonymous">
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;400;700;900&family=Roboto&display=swap"
-		 rel="stylesheet"> <!-- font link from google -->
-		<title>宅宅懶人搜</title>
-		<link rel="icon" href="192x192.png" type="image/x-icon" />
-		<link rel="shortcut icon" href="192x192.png" type="image/x-icon" />
-		<link rel="stylesheet" href="./css/japandrama.css">
-	</head>
 
-	<body>
-		<nav class="navbar navbar-expand-md navbar-dark sticky-top fuck" style="background-color: #00cc99;">
-			<div class="container fuck">
-				<a class="navbar-brand" href="#" onclick="javascript:location.href='japandrama.html';" style="font-size: 24px;">
-					<img class="mr-2" src="./192x192.png" height="36" class="d-inline-block align-top" alt="">
-					宅宅懶人搜
-				</a>
-				<button class="navbar-toggler fuck" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-				 aria-expanded="false" aria-label="Toggle navigation">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;400;700;900&family=Roboto&display=swap" rel="stylesheet">
+    <!-- font link from google -->
+    <title>宅宅懶人搜</title>
+    <link rel="icon" href="192x192.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="192x192.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/japandrama.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top fuck" style="background-color: #00cc99;">
+        <div class="container fuck">
+            <a class="navbar-brand" href="#" onclick="javascript:location.href='japandrama.html';" style="font-size: 24px;">
+                <img class="mr-2" src="./192x192.png" height="36" class="d-inline-block align-top" alt=""> 宅宅懶人搜
+            </a>
+            <button class="navbar-toggler fuck" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon fuck"></span>
 				</button>
-				<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-					<ul class="navbar-nav nav nav-pills">
-						<li class="nav-item">
-							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='index.html';" href="#"
-							 style="font-size: 18px;">動畫<span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link bg-transparent active" data-toggle="pill" onclick="javascript:location.href='japandrama.html';"
-							 href="#" style="font-size: 18px;">日劇</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='movies.html';" href="#"
-							 style="font-size: 18px;">電影</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='ptt.html';" href="#"
-							 style="font-size: 18px;">PTT</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='actor.html';" href="#"
-							 style="font-size: 18px;">演員搜</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-
-		<div class="container mt-2">
-			<div class="row justify-content-end">
-				<form class="form-inline my-2 my-lg-0">
-					<input class="form-control mr-sm-2 inputtext" type="search" placeholder="輸入劇名、演員搜尋" aria-label="Search" name="inputtext">
-					<button class="btn btn-outline-success my-2 my-sm-0 search" type="submit">Search</button>
-				</form>
-			</div>
-		</div>
-		<div class="container mt-2">
-			<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner">
-				</div>
-				<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
-			</div>
-			<div class="row cardset"></div>
-		</div>
-		<div class="container-fluid">
-			<div class="row  justify-content-center">
-				<nav aria-label="Page navigation example">
-					<ul class="pagination">
-					</ul>
-				</nav>
-			</div>
-		</div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='index.html';" href="#" style="font-size: 18px;">動畫<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-transparent active" data-toggle="pill" onclick="javascript:location.href='japandrama.html';" href="#" style="font-size: 18px;">日劇</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='movies.html';" href="#" style="font-size: 18px;">電影</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='ptt.html';" href="#" style="font-size: 18px;">PTT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='actor.html';" href="#" style="font-size: 18px;">演員搜</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
 
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-		 crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-		 crossorigin="anonymous"></script>
-		<script src="./js/japandrama.js" type="text/javascript" charset="utf-8"></script>
-	</body>
+
+    <div class="container mt-2">
+        <div class="form-inline md-form mr-auto mb-4 ml-3">
+            <input class="form-control mr-2 col-md-6 col-sm-5 col-4 inputtext" id="search" type="search" placeholder="輸入劇名、演員" aria-label="Search">
+            <button class="btn btn-outline-success col-md-2 col-sm-2 col-2 search" type="submit">Search</button>
+        </div>
+    </div>
+
+
+    <div class="d-flex justify-content-center up">
+        <div class="spinner-border text-success up " style="width: 5rem; height: 5rem;" role="status" id="loading ">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <div class="container ">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="row cardset"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row  justify-content-center">
+            <nav aria-label="Page navigation ">
+                <ul class="pagination">
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./js/japandrama.js" type="text/javascript" charset="utf-8"></script>
+</body>
 
 </html>
