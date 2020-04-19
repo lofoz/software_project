@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;400;700;900&family=Roboto&display=swap"
+		 rel="stylesheet">
+		<!-- font link from google -->
+		<title>宅宅懶人搜</title>
+		<link rel="icon" href="192x192.png" type="image/x-icon" />
+		<link rel="shortcut icon" href="192x192.png" type="image/x-icon" />
+	</head>
+
+	<body>
+		<style>
+			*
+        {
+            font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', 'Microsoft JhengHei', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+        }
+    </style>
+
+		<!-- 標頭 -->
+		<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #00cc99;">
+			<div class="container">
+				<a class="navbar-brand" href="#" onclick="javascript:location.href='index.html';" style="font-size: 24px;">
+					<img class="mr-2" src="./192x192.png" height="36" class="d-inline-block align-top" alt="">
+					宅宅懶人搜
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+				 aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+					<ul class="navbar-nav nav nav-pills">
+						<li class="nav-item">
+							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='index.html';" href="#"
+							 style="font-size: 18px;">動畫<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='japandrama.html';" href="#"
+							 style="font-size: 18px;">日劇</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='movies.html';" href="#"
+							 style="font-size: 18px;">電影</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='ptt.html';" href="#"
+							 style="font-size: 18px;">PTT</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link bg-transparent active" data-toggle="pill" onclick="javascript:location.href='actor.html';"
+							 href="#" style="font-size: 18px;">演員搜</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container mt-4">
+			<div class="jumbotron">
+				<h1 class="display-4">演員演出類型</h1>
+				<p class="lead">本程式可以幫你找出你最喜愛的演員和聲優最常在 KKTV 出演哪種類的戲</p>
+				<hr class="my-4">
+				<p>輸入演員全名來探索</p>
+				<!-- 輸入演員全名 -->
+				<input type="text" class="form-control" name="actor" id="actor" style="min-width: 200px; max-width: 500px;">
+				<br>
+				<input type="button" class="btn btn-primary" id="sendout" name="sendout" value="探索類型">
+				<br><br>
+				<p>心中沒有演員名稱？試試看這些出名的演員</p>
+				<button type="button" class="btn btn-outline-primary example" id="aragaki" onclick="useExample(this.id)">新垣結衣</button>
+				<button type="button" class="btn btn-outline-primary example" id="okamoto" onclick="useExample(this.id)">岡本信彥</button>
+				<button type="button" class="btn btn-outline-primary example" id="kimchi" onclick="useExample(this.id)">朴敘俊</button>
+				<button type="button" class="btn btn-outline-primary example" id="twman" onclick="useExample(this.id)">賀軍翔</button>
+				<p id="input-error" style="color:red"></p>
+				<!-- 放置統計圖表的地方 -->
+				<hr>
+				<div id="progressbars">
+					<!-- 這裡會放演員名稱 -->
+					<p id="result"></p>
+					<div id="pb"></div>
+				</div>
+				<div id="video-names">
+					<h4 id="vn"></h4>
+					<br>
+					<div id="out_videos">
+					</div>
+				</div>
+			</div>
+		</div>
+		<style>
+			#progressbars {
+				margin-left: 2px;
+			}
+
+			.navbar-toggler {
+				border: none;
+				padding: 0;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		 crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		 crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+		 crossorigin="anonymous">
+		<!-- <script src="./template/js/myscript.js" charset="utf-8"></script> -->
+
+
+		<script>
+			// constants
+			let divProgress = "<div class=\"progress\">";
+			let endDiv = "</div>";
+			// return a progress bar string with color, 
+			function progressBar(color, length) {
+				var len = 5 * length;
+				var prefix = "";
+				var postfix = " style=\"width:" + len.toString() + "%\" aria-valuenow=\"" + len.toString() +
+					"\" aria-valuemin=\"0\" aria-valuemax=\"100\">\n\t</div>";
+				switch (color) {
+					case "red":
+						prefix = "<div class=\"progress-bar bg-danger\" role=\"progressbar\"";
+						break;
+					case "yellow":
+						prefix = "<div class=\"progress-bar bg-warning\" role=\"progressbar\"";
+						break;
+					case "green":
+						prefix = "<div class=\"progress-bar bg-success\" role=\"progressbar\"";
+						break;
+					default:
+						prefix = "<div class=\"progress-bar bg-info\" role=\"progressbar\"";
+						break;
+				}
+				return "<div class=\"progress\" style=\"min-width:300px; max-width:700px;\" >\n\t" + prefix + postfix +
+					"\n</div > ";
+			}
+
+			function useExample(exampleActor) {
+				$("#actor").val($("#" + exampleActor).text());
+			}
+			// 處理輸入>會直接在頁面顯示
+			$(document).ready(function() {
+
+				$("#sendout").click(function() {
+					var actor = $("#actor").val();
+					actor.replace("<", "");
+					actor.replace(">", "");
+					actor.replace("/", "");
+					actor.replace(" ", "");
+					if (actor == "") {
+						$("#input-error").html("<br>請輸入演員名稱")
+						return;
+					}
+					$("#input-error").html("");
+					$.ajax({
+						type: "POST",
+						url: "/types",
+						data: {
+							actor: $("#actor").val()
+						},
+						beforeSend: function() {
+							cleanElement();
+							$("#result").html(
+								"<div class=\"spinner-border m-5\" role=\"status\">  <span class=\"sr-only\">Loading...</span></div>");
+						},
+						error: function(xhr) {
+							alert('Ajax request 發生錯誤');
+						},
+						dataType: "text",
+						success: function(response) {
+							// 會改掉
+							$("#vn").html("出演作品");
+							$("#out_videos").html("");
+							console.log(response);
+							$("#result").html("");
+							var numOfVideos = drawChart($("#pb"), response);
+							if (numOfVideos == 0) {
+								cleanElement();
+								$("#result").html("查無資料（是否填寫演員全名？）");
+							}
+						}
+					})
+				});
+			});
+
+			function cleanElement() {
+				// $("#actor-name").remove;
+				$("#vn").html("");
+				$("#result").html("");
+				$("#pb").html("");
+				$("#out_videos").html("");
+			}
+
+			function drawChart(element, jsonString) {
+				var numOfVideos = 0;
+				colors = ["red", "yellow", "green", "blue"];
+				var jsonObject = JSON.parse(jsonString);
+				var index = 0;
+				var typeDict = {};
+				element.html("");
+				for (var actor in jsonObject) {
+					element.append("<h2 id=\"actor-name\">" + actor + "</h2><br>");
+					element.append("<h4 id=\"statistic\">" + "出演類型統計" + "</h4><br>");
+					// iterating through video types
+					for (var dict in jsonObject[actor][0]) {
+						typeDict[dict.toString()] = jsonObject[actor][0][dict];
+						element.append(dict.toString() + " : " + typeDict[dict] + " 部");
+						numOfVideos += typeDict[dict];
+						element.append(progressBar(colors[index], jsonObject[actor][0][dict]) + "<br>")
+						index++;
+						if (index >= 4) index = 0;
+					}
+					// add list 
+					$("#out_videos").append("<div class=\"list-group\" id=\"group\">");
+
+					// iterating through video names
+					let liString = "<li class=\"list-group-item\">";
+
+					for (var dict in jsonObject[actor][1]) {
+						$("#group").append(liString + dict.toString() + "</li>");
+					}
+					$("#out_videos").append("</ul>");
+				}
+				var maxValue = 0;
+				var maxTypes = [];
+				// 找出最大值
+				for (var key in typeDict) {
+					if (typeDict[key] > maxValue) {
+						maxValue = typeDict[key];
+					}
+				}
+
+				// 列出最多演出類型
+				for (var key in typeDict) {
+					if (typeDict[key] == maxValue) {
+						maxTypes.push(key);
+					}
+				}
+				console.log(maxTypes);
+				let badge = "<div class=\"alert alert-success\" role=\"alert\"> 演出最多類型是：";
+				var str = "";
+				for (var i = 0; i < maxTypes.length; i++) {
+					badge += maxTypes[i] + " ";
+				}
+				badge += "</div>";
+				$("#pb").append(badge);
+				$("#pb").append("<hr>");
+				return numOfVideos;
+			}
+		</script>
+	</body>
+</html>

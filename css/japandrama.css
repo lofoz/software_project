@@ -15,12 +15,16 @@ body {
 	margin-bottom: 20px;
 }
 
+html :not(.fuck) {
+	font-size: 0.6rem;
+}
+
 @media (max-width: 575px) {
 	.link {
 		width: 100%;
 	}
 
-	html :not(#fuck) {
+	html :not(.fuck) {
 		font-size: 0.6rem;
 	}
 
@@ -35,7 +39,7 @@ body {
 		width: 100%;
 	}
 
-	html :not(#fuck) {
+	html :not(.fuck) {
 		font-size: 1.0rem;
 	}
 
@@ -50,7 +54,7 @@ body {
 		width: 100%;
 	}
 
-	html :not(#fuck) {
+	html :not(.fuck) {
 		font-size: 1.2rem;
 	}
 
@@ -65,7 +69,7 @@ body {
 		width: 100%;
 	}
 
-	html :not(#fuck) {
+	html :not(.fuck) {
 		font-size: 1.4rem;
 	}
 }
@@ -75,7 +79,7 @@ body {
 		width: 50%;
 	}
 
-	html :not(#fuck) {
+	html :not(.fuck) {
 		font-size: 1.6rem;
 	}
 }

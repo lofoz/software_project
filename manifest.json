@@ -1,6 +1,6 @@
 {
-	"name": "宅宅嗨翻天",
-	"short_name": "宅宅",
+	"name": "宅宅懶人搜",
+	"short_name": "懶人搜",
 	"start_url": ".",
 	"icons": [{
 		"src": "192x192.png",
