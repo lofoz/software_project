@@ -12,7 +12,7 @@ var state = 0; //home
 var pre_text;
 $(document).ready(function() {
 	$.ajax({
-		url: "https://cors-anywhere.herokuapp.com/https://japan-drama.herokuapp.com/",
+		url: "https://japan-drama.herokuapp.com/",
 		type: "GET",
 		dataType: 'json',
 		success: function(data) {
@@ -157,7 +157,7 @@ $(document).ready(function() {
 
 	function init_carousel(num) {
 		$.ajax({
-			url: "https://cors-anywhere.herokuapp.com/https://japan-drama.herokuapp.com/banner",
+			url: "https://japan-drama.herokuapp.com/banner",
 			type: "GET",
 			dataType: 'json',
 			success: function(data) {

@@ -39,7 +39,7 @@ async function search() {
 
 	// 處理 data
 	var xhr1 = new XMLHttpRequest;
-	var url1 = "https://cors-anywhere.herokuapp.com/https://crawler4ptt.herokuapp.com/search/" + board + "/" + kw;
+	var url1 = "https://crawler4ptt.herokuapp.com/search/" + board + "/" + kw;
 	xhr1.open('GET', url1);
 	xhr1.responseType = 'json';
 	xhr1.send();
@@ -52,7 +52,7 @@ async function search() {
 	}
 
 	var xhr2 = new XMLHttpRequest;
-	var url2 = "https://cors-anywhere.herokuapp.com/https://crawler4ptt.herokuapp.com/wc/" + board;
+	var url2 = "https://crawler4ptt.herokuapp.com/wc/" + board;
 	xhr2.open('GET', url2);
 	xhr2.responseType = 'json';
 	xhr2.send();
@@ -97,7 +97,7 @@ async function new_news() {
 	// 處理 data
 	console.log('page loading');
 	var xhr1 = new XMLHttpRequest;
-	var url1 = "https://cors-anywhere.herokuapp.com/https://crawler4ptt.herokuapp.com/news";
+	var url1 = "https://crawler4ptt.herokuapp.com/news";
 	xhr1.open('GET', url1);
 	xhr1.responseType = 'json';
 	xhr1.send();
