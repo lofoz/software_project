@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>PTT_Crawler</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- search icon -->
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;400;700;900&family=Roboto&display=swap"
+		 rel="stylesheet"> <!-- font link from google -->
+		<link rel="stylesheet" type="text/css" href="./css/ptt.css">
+	</head>
+
+	<body>
+		<!-- 標頭 -->
+		<nav class="navbar navbar-expand-md navbar-dark sticky-top" style="background-color: #00cc99;">
+			<div class="container">
+				<a class="navbar-brand" href="#" onclick="javascript:location.href='index.html';" style="font-size: 24px;">
+					<img class="mr-2" src="./192x192.png" height="36" class="d-inline-block align-top" alt="">
+					宅宅
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+				 aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+					<ul class="navbar-nav nav nav-pills">
+						<li class="nav-item info">
+							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='index.html';" href="#"
+							 style="font-size: 18px;">動畫<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item map_page">
+							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='japandrama.html';" href="#"
+							 style="font-size: 18px;">日劇</a>
+						</li>
+						<li class="nav-item data_analyze">
+							<a class="nav-link bg-transparent" data-toggle="pill" onclick="javascript:location.href='movies.html';" href="#"
+							 style="font-size: 18px;">電影</a>
+						</li>
+						<li class="nav-item sport_page">
+							<a class="nav-link bg-transparent active" data-toggle="pill" onclick="javascript:location.href='ptt.html';" href="#"
+							 style="font-size: 18px;">PTT</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container shadow-lg p-3 mb-5 bg-white rounded" style="margin-top: 60px;">
+			<div class="column" style="margin-block-end:10px; padding:10px;">
+				<div class="row" style="min-height: 100px;">
+					<div class="col-7">
+						<h1>PTT Crawler</h1>
+					</div>
+					<div class="col-5 text-right" style="min-height: 86px;">
+						<div class="collapse" style="min-width: 250px; max-width: 300px; margin-top: 10px; float: left;" id="demo">
+							<input type="text" class="form-control" id="board" placeholder="請輸入版名　 ex : gossiping" style="shape-margin: 10px;">
+							<input type="text" class="form-control" id="kw" placeholder="請輸入關鍵字 ex : 台灣" style="margin-top: 5px;">
+						</div>
+						<span>
+							<div><button type="btn" class="btn btn-info" style="margin:10px; margin-right: 40px;" id='btn' onclick="search();">點我看懶人包</button></div>
+							<div><button type="btn" style="background-color: white; border:none; margin-right: 126px;" data-toggle="collapse"
+								 data-target="#demo"><i class="material-icons">search</i></button></div>
+						</span>
+					</div>
+				</div>
+				<div class='col-12' style="margin:10px">
+					<h3>熱門話題</h3>
+					<div id='sp0' class="spinner-border"></div>
+					<div id='caro'>
+
+						<div id="caro"" class=" carousel slide" data-ride="carousel">
+							<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+								<ol id="indi" class="carousel-indicators">
+									<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+									<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+									<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+									<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+									<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+								</ol>
+								<div class="carousel-inner">
+									<div id='n1' class="carousel-item active"></div>
+									<div id='n2' class="carousel-item"></div>
+									<div id='n3' class="carousel-item"></div>
+									<div id='n4' class="carousel-item"></div>
+									<div id='n5' class="carousel-item"></div>
+								</div>
+								<a id="prev" class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+									<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+									<span class="sr-only">Previous</span>
+								</a>
+								<a id="next" class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+									<span class="carousel-control-next-icon" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+								</a>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
+
+				<div class="col" id='d1' style="margin-top: 50px; margin-bottom: 10px;">
+					<div>
+
+						<div>
+							<h3>搜尋結果</h3>
+							<div id='sp1' class="spinner-border"></div>
+							<div id='result' class="col"></div>
+						</div>
+
+
+						<div style="margin-top: 50px; margin-bottom: 50px;">
+							<h3>你可能有興趣的話題</h3>
+							<div id='sp2' class="spinner-border"></div>
+							<div id='hot' class="col"></div>
+						</div>
+
+						<div id='d2'>
+							<h3 align="left">熱門關鍵字</h3>
+							<div id='sp3' class="spinner-border"></div>
+							<img id='wc' src="" style="max-width:100%; max-height:100%;" alt='查無結果'></img>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./js/ptt.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>
