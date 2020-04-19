@@ -13,6 +13,8 @@ $('#firstpage').click(function() {
 	$('.display_1').css("display", "none");
 	$('.display_2').css("display", "none");
 	$('.display_board').css("display", "none");
+	$('.news_pagination').html("");
+	$('.news_pagination').css("display", "block");
 	$('.display_news').css("display", "block");
 	$('#firstpage').addClass('active');
 	get_news();
@@ -300,7 +302,6 @@ function add_new(now_page) {
 		}
 	}
 	$('.news_pagination').html(pagination);
-	$('.news_pagination').css("display", "block");
 }
 
 function board(analyze_data) {
