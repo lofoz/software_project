@@ -30,6 +30,11 @@ button {
 	font-weight: 100;
 }
 
+.navbar-toggler {
+	border: none;
+	padding: 0;
+}
+
 .card {
 	width: 100%;
 	border: none;
