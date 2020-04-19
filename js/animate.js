@@ -175,7 +175,7 @@ function get_news() {
 	$('.display_news').html("");
 	$('#loading').css("display", "block");
 	var xhr1 = new XMLHttpRequest;
-	var url1 = "https://cors-anywhere.herokuapp.com/https://bh-animate.herokuapp.com/show_animates_news";
+	var url1 = "https://bh-animate.herokuapp.com/show_animates_news";
 	xhr1.open('GET', url1);
 	xhr1.responseType = 'json';
 	xhr1.send();
@@ -191,7 +191,7 @@ function get_board(num) {
 	$('.display_board').html("");
 	$('#loading').css("display", "block");
 	var xhr1 = new XMLHttpRequest;
-	var url1 = "https://cors-anywhere.herokuapp.com/https://bh-animate.herokuapp.com/show_hot_animate_" + num;
+	var url1 = "https://bh-animate.herokuapp.com/show_hot_animate_" + num;
 	xhr1.open('GET', url1);
 	xhr1.responseType = 'json';
 	xhr1.send();
@@ -207,7 +207,7 @@ function analyze(day) {
 	$('.display_1').html("");
 	$('#loading').css("display", "block");
 	var xhr1 = new XMLHttpRequest;
-	var url1 = "https://cors-anywhere.herokuapp.com/https://bh-animate.herokuapp.com/animate_new_season_" + day;
+	var url1 = "https://bh-animate.herokuapp.com/animate_new_season_" + day;
 	xhr1.open('GET', url1);
 	xhr1.responseType = 'json';
 	xhr1.send();
@@ -227,7 +227,7 @@ function search(str) {
 			$('.display_2').html("");
 			$('#loading').css("display", "block");
 			var xhr1 = new XMLHttpRequest;
-			var url1 = "https://cors-anywhere.herokuapp.com/https://bh-animate.herokuapp.com/search_animate/" + str;
+			var url1 = "https://bh-animate.herokuapp.com/search_animate/" + str;
 			xhr1.open('GET', url1);
 			xhr1.responseType = 'json';
 			xhr1.send();

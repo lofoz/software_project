@@ -99,7 +99,7 @@ function get_news() {
 	$('.display_news').html("");
 	$('#loading').css("display", "block");
 	var xhr1 = new XMLHttpRequest;
-	var url1 = "https://cors-anywhere.herokuapp.com/https://ya-movie.herokuapp.com/show_movies_news";
+	var url1 = "https://ya-movie.herokuapp.com/show_movies_news";
 	xhr1.open('GET', url1);
 	xhr1.responseType = 'json';
 	xhr1.send();
@@ -115,7 +115,7 @@ function get_board(num) {
 	$('.display_board').html("");
 	$('#loading').css("display", "block");
 	var xhr1 = new XMLHttpRequest;
-	var url1 = "https://cors-anywhere.herokuapp.com/https://ya-movie.herokuapp.com/show_hot_movies_" + num;
+	var url1 = "https://ya-movie.herokuapp.com/show_hot_movies_" + num;
 	xhr1.open('GET', url1);
 	xhr1.responseType = 'json';
 	xhr1.send();
@@ -131,7 +131,7 @@ function analyze() {
 	$('.display_1').html("");
 	$('#loading').css("display", "block");
 	var xhr1 = new XMLHttpRequest;
-	var url1 = "https://cors-anywhere.herokuapp.com/https://ya-movie.herokuapp.com/show_new_movies";
+	var url1 = "https://ya-movie.herokuapp.com/show_new_movies";
 	xhr1.open('GET', url1);
 	xhr1.responseType = 'json';
 	xhr1.send();
@@ -151,7 +151,7 @@ function search(str) {
 			$('.display_2').html("");
 			$('#loading').css("display", "block");
 			var xhr1 = new XMLHttpRequest;
-			var url1 = "https://cors-anywhere.herokuapp.com/https://ya-movie.herokuapp.com/search_moive/" + str;
+			var url1 = "https://ya-movie.herokuapp.com/search_moive/" + str;
 			xhr1.open('GET', url1);
 			xhr1.responseType = 'json';
 			xhr1.send();
